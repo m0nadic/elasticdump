@@ -1,6 +1,6 @@
 # elasticdump
 
-Docker image for [elasticsearh-dump](https://github.com/elasticsearch-dump/elasticsearch-dump).
+Docker image for [elasticsearch-dump](https://github.com/elasticsearch-dump/elasticsearch-dump).
 
 ## Build
 
