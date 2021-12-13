@@ -1,0 +1,15 @@
+#!/bin/bash
+
+INPUT_FOLDER="${1:-./backup}"
+ES_HOST="${2:-localhost}"
+ES_PORT="${3:-9200}"
+
+cd $INPUT_FOLDER
+
+for file in `ls *.json`
+do
+	index=$(echo $file|cut -f 1 -d '.')
+	echo "restoring $index"
+	elasticdump --output=http://$ES_HOST:$ES_PORT/$index --input=./$index.json --type=data
+	echo "------------------"
+done
